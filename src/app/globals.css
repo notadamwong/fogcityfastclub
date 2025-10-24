@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* already present: @tailwind base; @tailwind components; @tailwind utilities; */
+
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

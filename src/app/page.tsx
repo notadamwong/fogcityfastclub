@@ -1,3 +1,23 @@
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
+import Link from "next/link";
+
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <div>
+      <nav className="border-b">
+        <div className="max-w-2xl mx-auto px-4 py-3 flex gap-4 text-sm">
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/subscribe">Subscribe</Link>
+          <a href="/admin" rel="nofollow">Admin</a>
+        </div>
+      </nav>
+      <Component {...pageProps} />
+    </div>
+  );
+}
+
 import Image from "next/image";
 
 export default function Home() {
