@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "songs"
+    label: "Songs"
+    folder: "content/songs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { name: title, label: Title }
+      - { name: artist, label: Artist }
+      - { name: publishDate, label: Publish Date, widget: datetime }
+      - { name: platform, label: Platform, widget: select, options: ["spotify","bandcamp","self"], default: "spotify" }
+      - { name: songUrl, label: Song URL }
+      - { name: instagramCaption, label: Instagram Caption, required: false }
+      - { name: tags, label: Tags, widget: list, required: false }
+      - { name: body, label: Notes, widget: markdown, required: false }
